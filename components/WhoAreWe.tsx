@@ -35,7 +35,7 @@ export default function WhoAreWe() {
     return (
         <section 
             ref={sectionRef} 
-            className="w-full bg-black text-white py-32 px-6 md:px-16 select-none relative overflow-hidden border-b border-zinc-900/80"
+            className="w-full bg-black text-white py-15 px-6 md:px-16 select-none relative overflow-hidden border-b border-zinc-900/80"
         >
             <div className="absolute top-1/3 left-10 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none animate-pulse" />
             <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-teal-500/10 rounded-full blur-[140px] pointer-events-none" />
@@ -44,7 +44,6 @@ export default function WhoAreWe() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                     
                     <div className="lg:col-span-6 space-y-8">
-
                         <h2 
                             className={`text-4xl md:text-5xl font-black uppercase tracking-tight leading-[1.05] transition-all duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform ${
                                 isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-12 blur-sm'
@@ -100,8 +99,6 @@ export default function WhoAreWe() {
                         </div>
                     </div>
 
-
-
                     <div 
                         className={`lg:col-span-6 transition-all duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] transform ${
                             isVisible ? 'opacity-100 translate-y-0 scale-100 blur-0' : 'opacity-0 translate-y-16 scale-95 blur-sm'
@@ -111,12 +108,11 @@ export default function WhoAreWe() {
                         <div className="grid grid-cols-2 gap-4 items-center relative">
                             <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-3xl blur-xl pointer-events-none" />
 
-
-
                             <div className="relative h-[380px] w-full rounded-3xl overflow-hidden border border-zinc-700/80 bg-zinc-950 shadow-2xl group">
                                 <img 
-                                    src="https://images.pexels.com/photos/35979810/pexels-photo-35979810.jpeg" 
+                                    src="https://images.pexels.com/photos/32115180/pexels-photo-32115180.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" 
                                     alt="Aviation display showcase" 
+                                    loading="lazy"
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -125,12 +121,11 @@ export default function WhoAreWe() {
                                 </span>
                             </div>
 
-
-
                             <div className="relative h-[440px] w-full rounded-3xl overflow-hidden border border-zinc-700/80 bg-zinc-950 shadow-2xl group -mt-8">
                                 <img 
-                                    src="https://images.pexels.com/photos/31243046/pexels-photo-31243046.jpeg" 
+                                    src="https://images.pexels.com/photos/4558373/pexels-photo-4558373.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" 
                                     alt="Vertical aircraft component showcase" 
+                                    loading="lazy"
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />

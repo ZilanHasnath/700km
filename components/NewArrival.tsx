@@ -42,25 +42,52 @@ export default function NewArrival() {
         const scrollContainer = scrollContainerRef.current;
         if (!scrollContainer) return;
 
-        const scrollStep = () => {
+        const interval = setInterval(() => {
             if (!isPaused && scrollContainer) {
-                scrollContainer.scrollLeft += 1;
-                if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+                const cardWidth = 300;
+                const gap = 24;
+                const scrollAmount = cardWidth + gap;
+                const maxScrollLeft = scrollContainer.scrollWidth / 2;
+
+                if (scrollContainer.scrollLeft >= maxScrollLeft) {
                     scrollContainer.scrollLeft = 0;
+                } else {
+                    scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                 }
             }
-        };
+        }, 3000);
 
-        const interval = setInterval(scrollStep, 25);
         return () => clearInterval(interval);
     }, [products, isPaused]);
+
+    const scrollLeft = () => {
+        if (scrollContainerRef.current) {
+            const cardWidth = 300;
+            const gap = 24;
+            scrollContainerRef.current.scrollBy({ left: -(cardWidth + gap), behavior: 'smooth' });
+        }
+    };
+
+    const scrollRight = () => {
+        if (scrollContainerRef.current) {
+            const cardWidth = 300;
+            const gap = 24;
+            scrollContainerRef.current.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
+        }
+    };
 
     if (loading) {
         return (
             <section className="w-full bg-black py-20 px-6 md:px-16 text-white">
                 <div className="max-w-7xl mx-auto">
-                    <div className="mb-10 space-y-2">
-                        <div className="h-8 w-64 bg-zinc-800 rounded-xl animate-pulse" />
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                        <div className="space-y-2">
+                            <div className="h-10 w-72 bg-zinc-900 rounded-xl animate-pulse" />
+                        </div>
+                        <div className="flex gap-3">
+                            <div className="w-12 h-12 rounded-full bg-zinc-900 animate-pulse" />
+                            <div className="w-12 h-12 rounded-full bg-zinc-900 animate-pulse" />
+                        </div>
                     </div>
                     <div className="flex gap-6 overflow-hidden">
                         {[1, 2, 3, 4].map((n) => (
@@ -86,6 +113,27 @@ export default function NewArrival() {
                         <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
                             New <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-cyan-400">Arrivals</span>
                         </h2>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                        <button 
+                            onClick={scrollLeft}
+                            aria-label="Scroll Left"
+                            className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white hover:bg-cyan-400 hover:text-black hover:border-cyan-400 transition-all duration-300 shadow-lg cursor-pointer active:scale-95"
+                        >
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button 
+                            onClick={scrollRight}
+                            aria-label="Scroll Right"
+                            className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-white hover:bg-cyan-400 hover:text-black hover:border-cyan-400 transition-all duration-300 shadow-lg cursor-pointer active:scale-95"
+                        >
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
 

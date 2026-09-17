@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { cookies } from 'next/headers';
 import jwt from 'jsonwebtoken';
 import { connectMongoDB } from '@/lib/mongodb';
+import '@/models/User';
 import Product from '@/models/Product';
 import Order from '@/models/Order';
 import ProductActions from '@/components/ProductActions';
