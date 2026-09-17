@@ -2,14 +2,14 @@
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-[#000000] text-[#86868b] border-t border-zinc-900 py-12 px-6 md:px-16 select-none font-sans">
+        <footer className="w-full bg-[#000000] text-[#86868b] border-t border-zinc-500 py-12 px-6 md:px-16 select-none font-sans">
             <div className="max-w-5xl mx-auto space-y-8">
-                <div className="text-[11px] leading-relaxed border-b border-zinc-900 pb-8 text-zinc-500 font-normal">
+                <div className="text-[11px] leading-relaxed border-b border-zinc-900 pb-8 text-zinc-400 font-normal">
                     <p>
-                        1. AeroLux bespoke aviation and rotorcraft engineering are subject to availability and tailored configuration. Specifications and performance metrics are provided for guidance only and do not constitute an explicit contractual offer.
+                        700km aviation and rotorcraft engineering are subject to availability and tailored configuration. Specifications and performance metrics are provided for guidance only and do not constitute an explicit contractual offer.
                     </p>
                     <p className="mt-2">
-                        Copyright © {new Date().getFullYear()} AeroLux Inc. All rights reserved. Global Operations.
+                        Copyright © {new Date().getFullYear()} 700km Inc. All rights reserved. Global Operations.
                     </p>
                 </div>
 
@@ -30,7 +30,7 @@ export default function Footer() {
 
                 <div className="flex items-center justify-between pt-4 border-t border-zinc-900/50">
                     <div className="text-[11px] text-zinc-600">
-                        AeroLux Worldwide
+                        700km
                     </div>
                     <div className="flex items-center gap-5 text-zinc-500">
                         <span className="hover:text-white transition-colors cursor-pointer">

@@ -130,7 +130,7 @@ export default function Navbar() {
             <header className={`hidden md:block fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-xl border-b border-white/10 transition-transform duration-300 ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
                 <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
                     <Link href="/" onClick={scrollToTop} className="text-2xl font-black tracking-tighter text-white flex items-center gap-2 group">
-                        <span className="bg-white bg-clip-text text-transparent group-hover:to-cyan-400 transition">300km</span>
+                        <span className="bg-white bg-clip-text text-transparent group-hover:to-cyan-400 transition">700km</span>
                     </Link>
 
                     <div className="relative w-96">
@@ -218,7 +218,7 @@ export default function Navbar() {
 
             <header className={`md:hidden bg-black/50 backdrop-blur-xl border-b border-white/10 fixed top-0 left-0 right-0 z-40 px-5 h-16 flex justify-between items-center transition-transform duration-300 ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
                 <Link href="/" onClick={scrollToTop} className="text-lg font-black tracking-tight text-white flex items-center gap-2">
-                    300km
+                    700km
                 </Link>
                 {role !== 'admin' && (
                     <Link href="/cart" className="relative text-white p-2 bg-white/10 rounded-xl border border-white/10">
