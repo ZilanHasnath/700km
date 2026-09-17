@@ -1,6 +1,6 @@
 # 700km
 
-A full stack luxury helicopter marketplace and booking platform built with Next.js and MongoDB.
+A full stack luxury helicopter marketplace built with Next.js and MongoDB.
 
 ### Tech Stack
 * **Frontend:** Next.js, React, Tailwind CSS, TypeScript
