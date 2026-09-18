@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import Hero from '@/components/Hero';
 import HelicopterPremium from '@/components/HelicopterPremium';
 import WhoAreWe from '@/components/WhoAreWe';
@@ -9,15 +8,8 @@ export default function Home() {
         <div className="min-h-[calc(100vh-73px)] bg-black text-white">
             <Hero />
             <HelicopterPremium />
-
-            <Suspense fallback={<div className="h-48 bg-zinc-900 animate-pulse" />}>
-                <WhoAreWe />
-            </Suspense>
-
-
-            <Suspense fallback={<div className="h-96 bg-zinc-900 animate-pulse" />}>
-                <ProductsPage />
-            </Suspense>
+            <WhoAreWe />
+            <ProductsPage />
         </div>
     );
 }
